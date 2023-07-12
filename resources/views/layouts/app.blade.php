@@ -88,7 +88,7 @@
             </div>
             <div class="col-lg-6 ms-auto text-lg-end text-center">
                 <p class="mb-5 text-lg text-white font-weight-bold">
-                    Unwind, Connect, and Make Lasting Memories at Our Vibrant Hotel and Bar!
+                    Unwind, Connect, and Make Lasting Memories at Our Vibrant Hotel!
                 </p>
                 <a href="javascript:;" class="text-white me-xl-4 me-4 opacity-5">
                     <span class="fab fa-instagram" aria-hidden="true"></span>
