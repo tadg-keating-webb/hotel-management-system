@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Contracts\View\View;
+use Inertia\Response;
 
 class HomeController extends Controller
 {
-    public function __invoke(): View
+    public function __invoke(): Response
     {
-        return view('home');
+        return inertia('Home');
     }
 }
