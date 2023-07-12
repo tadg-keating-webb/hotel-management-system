@@ -4,7 +4,7 @@
 
 <template>
     <div class="d-flex flex-column vh-100">
-        <nav class="navbar navbar-expand-lg bg-transparent py-3 shadow-none">
+        <nav class="navbar navbar-expand-lg bg-transparent py-3 shadow-none ">
             <div class="container">
                 <a href="javascript:void(0);" class="navbar-brand w-8">
                     <img src="/images/hotel-logo.png" alt="" height="" width="100">
@@ -40,8 +40,7 @@
         </main>
 
         <footer class="footer py-5 bg-gradient-dark mt-auto py-3 mb-0">
-            <img src="https://demos.creative-tim.com/soft-ui-design-system-pro/assets/img/shapes/waves-white.svg" alt="pattern-lines" class="position-absolute start-0 top-0 w-100 opacity-6">
-            <div class="container position-relative z-index-1">
+`            <div class="container position-relative z-index-1">
                 <div class="row">
                     <div class="col-lg-4 me-auto mb-lg-0 mb-4 text-lg-start text-center">
                         <h6 class="text-white font-weight-bolder text-uppercase mb-lg-4 mb-3">Hotel Management System</h6>
