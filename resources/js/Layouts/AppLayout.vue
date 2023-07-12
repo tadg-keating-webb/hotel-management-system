@@ -2,10 +2,6 @@
 
 </script>
 
-<style lang="scss" scoped>
-
-</style>
-
 <template>
     <div class="d-flex flex-column vh-100">
         <nav class="navbar navbar-expand-lg bg-transparent py-3 shadow-none">
