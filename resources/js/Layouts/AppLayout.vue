@@ -82,7 +82,7 @@
                         <a href="javascript:;" class="text-white me-xl-4 me-4 opacity-5">
                             <span class="fab fa-twitter" aria-hidden="true"></span>
                         </a>
-                        <a href="https://www.facebook.com/profile.php?id=100089126157507" class="text-white me-xl-4 me-4 opacity-5" target="_blank">
+                        <a href="javascript:;" class="text-white me-xl-4 me-4 opacity-5" target="_blank">
                             <span class="fab fa-facebook" aria-hidden="true"></span>
                         </a>
                         <a href="javascript:;" class="text-white me-xl-4 me-4 opacity-5">
