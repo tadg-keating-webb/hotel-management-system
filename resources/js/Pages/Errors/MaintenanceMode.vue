@@ -5,9 +5,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 999; /* (optional) Adjust the z-index as needed */
-    background-color: #ff7f2e;
-    font-family: 'Concert One', cursive;
+    z-index: 999;
     margin: 0;
     overflow: hidden;
     padding: 0;
@@ -17,14 +15,14 @@
 /*/
 ////////////////// scene */
 .text {
-    /*font-family: 'Concert One', cursive;*/
+    font-family: 'Concert One', cursive;
     left: 50%;
     position: absolute;
     transform: translate(-50%, -50%);
-    color: black;
+    color: white;
     text-align: center;
-    top: 30%;
-    font-size: 57px; /* Adjust the font size as needed */
+    top: 20%;
+    font-size: 160em; /* Adjust the font size as needed */
 }
 .container {
     left: 50%;
@@ -395,10 +393,10 @@
 </style>
 
 <template>
-    <div class="body">
-        <div class="text">
-            <p>Website is undergoing maintenance</p>
-            <p>Please try reloading after a minute or so...</p>
+    <div class="body bg-gradient-warning">
+        <div class="text" >
+            <p style="font-size: 69px">Website is undergoing maintenance</p>
+            <p style="font-size: 39px">Please try reloading after a minute or so...</p>
         </div>
         <div class="container">
             <!-- caveman left -->
