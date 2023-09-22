@@ -36,8 +36,7 @@ class ContactResource extends Resource
             ->schema([
                 Infolists\Components\TextEntry::make('message')
                     ->columnSpanFull(),
-                Infolists\Components\TextEntry::make('firstname'),
-                Infolists\Components\TextEntry::make('lastname'),
+                Infolists\Components\TextEntry::make('name'),
                 Infolists\Components\TextEntry::make('email'),
             ]);
     }
@@ -47,8 +46,7 @@ class ContactResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('id'),
-                Tables\Columns\TextColumn::make('first_name'),
-                Tables\Columns\TextColumn::make('last_name'),
+                Tables\Columns\TextColumn::make('name'),
                 Tables\Columns\TextColumn::make('email'),
                 Tables\Columns\TextColumn::make('message')
                     ->getStateUsing(function (Contact $contact) {

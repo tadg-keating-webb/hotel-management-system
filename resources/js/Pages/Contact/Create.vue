@@ -3,8 +3,7 @@ import AppLayout from "../../Layouts/AppLayout.vue";
 import {router, useForm} from '@inertiajs/vue3'
 
 const form = useForm({
-    first_name: null,
-    last_name: null,
+    name: null,
     email: null,
     message: null,
     terms: null,
@@ -29,26 +28,19 @@ function submit() {
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-md-6 mb-4">
-                                        <label>First Name</label>
+                                        <label>Name</label>
                                         <div class="input-group">
-                                            <input class="form-control" placeholder="" aria-label="First Name..." type="text" v-model="form.first_name">
+                                            <input class="form-control" placeholder="" aria-label="First Name..." type="text" v-model="form.name">
                                         </div>
-                                        <div class="text-danger mt-1" v-if="form.errors.first_name">{{ form.errors.first_name }}</div>
+                                        <div class="text-danger mt-1" v-if="form.errors.name">{{ form.errors.name }}</div>
                                     </div>
-                                    <div class="col-md-6 ps-2">
-                                        <label>Last Name</label>
+                                    <div class="col-md-6 mb-4">
+                                        <label>Email</label>
                                         <div class="input-group">
-                                            <input type="text" class="form-control" placeholder="" aria-label="Last Name..." v-model="form.last_name">
+                                            <input type="email" class="form-control" placeholder="" v-model="form.email">
                                         </div>
-                                        <div class="text-danger mt-1 mb-3" v-if="form.errors.last_name">{{ form.errors.last_name }}</div>
+                                        <div class="text-danger mt-1" v-if="form.errors.email">{{ form.errors.email }}</div>
                                     </div>
-                                </div>
-                                <div class="mb-4">
-                                    <label>Email Address</label>
-                                    <div class="input-group">
-                                        <input type="email" class="form-control" placeholder="" v-model="form.email">
-                                    </div>
-                                    <div class="text-danger mt-1 mb-3" v-if="form.errors.email">{{ form.errors.email }}</div>
                                 </div>
                                 <div class="form-group mb-4">
                                     <label>Your message</label>
