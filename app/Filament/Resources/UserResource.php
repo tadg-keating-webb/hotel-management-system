@@ -9,7 +9,6 @@ use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
-use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
@@ -28,8 +27,8 @@ class UserResource extends Resource
                 Forms\Components\TextInput::make('email')->email()->required(),
                 Forms\Components\TextInput::make('password')->password()->required(),
                 Forms\Components\Select::make('is_admin')
-                    ->options([true => 'Yes', false => 'No'])
-                    ->default('No'),
+                    ->options([true => 'Yes', false => 'No']),
+
             ]);
     }
 
@@ -37,12 +36,10 @@ class UserResource extends Resource
     {
         return $table
             ->columns([
-                TextColumn::make('id'),
-                TextColumn::make('name'),
-                TextColumn::make('email'),
-                TextColumn::make('is_admin')->getStateUsing(function (User $user) {
-                    return $user->is_admin ? 'Yes' : 'No';
-                })
+                Tables\Columns\TextColumn::make('id'),
+                Tables\Columns\TextColumn::make('name'),
+                Tables\Columns\TextColumn::make('email'),
+                Tables\Columns\IconColumn::make('is_admin')->boolean(),
             ])
             ->filters([
                 //
