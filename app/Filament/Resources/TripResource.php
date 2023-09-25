@@ -12,6 +12,7 @@ use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Mohamedsabil83\FilamentFormsTinyeditor\Components\TinyEditor;
 
 class TripResource extends Resource
 {
@@ -29,6 +30,9 @@ class TripResource extends Resource
                 Forms\Components\Textarea::make('description')
                     ->required()
                     ->maxLength(65535)
+                    ->columnSpanFull(),
+                TinyEditor::make('long_description')
+                    ->minHeight(500)
                     ->columnSpanFull(),
                 Forms\Components\TextInput::make('price')
                     ->numeric()
@@ -73,14 +77,14 @@ class TripResource extends Resource
                 ]),
             ]);
     }
-    
+
     public static function getRelations(): array
     {
         return [
             //
         ];
     }
-    
+
     public static function getPages(): array
     {
         return [
@@ -88,5 +92,5 @@ class TripResource extends Resource
             'create' => Pages\CreateTrip::route('/create'),
             'edit' => Pages\EditTrip::route('/{record}/edit'),
         ];
-    }    
+    }
 }

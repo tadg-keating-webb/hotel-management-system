@@ -12,6 +12,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->text('description');
+            $table->longText('long_description');
             $table->float('price')->nullable();
             $table->boolean('contact_for_price')->default(0);
             $table->string('image')->nullable();

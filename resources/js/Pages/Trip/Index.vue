@@ -1,5 +1,6 @@
 <script setup>
 import AppLayout from "../../Layouts/AppLayout.vue";
+import { Link } from "@inertiajs/vue3";
 
 defineProps({
     trips: Object,
@@ -18,9 +19,9 @@ defineProps({
                             <div v-for="(trip, index) in trips" class="col-lg-4 mb-lg-0 mb-4" :class="{'mt-4': index >= 3}">
                                 <div class="card">
                                     <div class="p-0 mx-3 mt-3 position-relative z-index-1">
-                                        <a href="javascript:;" class="d-block">
+                                        <Link :href="route('trip.show', trip)" :class="'d-block'">
                                             <img :src="'/storage/' + trip.image" class="img-fluid border-radius-lg">
-                                        </a>
+                                        </Link>
                                     </div>
                                     <div class="card-body pt-3">
                                         <a href="javascript:;" class="card-title h5 d-block text-darker">{{ trip.name }}</a>
