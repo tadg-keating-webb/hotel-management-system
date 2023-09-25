@@ -16,8 +16,7 @@ class ContactTest extends TestCase
     private function getFakeUserData(): array
     {
         return [
-            'first_name' => $this->faker->firstName,
-            'last_name' => $this->faker->lastName,
+            'name' => $this->faker->name,
             'email' => $this->faker->safeEmail,
             'message' => $this->faker->paragraph,
             'terms' => true,
@@ -26,7 +25,7 @@ class ContactTest extends TestCase
 
     public function testContactUsPageIsAccessible()
     {
-        $response = $this->get('/contact-us');
+        $response = $this->get(route('contact.create'));
 
         $response->assertStatus(200);
         $response->assertInertia(fn (Assert $page) => $page
@@ -38,32 +37,22 @@ class ContactTest extends TestCase
     {
         $requestData = $this->getFakeUserData();
 
-        $response = $this->post('/contact-us', $requestData);
+        $response = $this->post(route('contact.create'), $requestData);
 
         $response->assertStatus(302);
-        $response->assertRedirect(route('home'));
+        $response->assertRedirect(route('contact.create'));
 
         $this->assertDatabaseHas('contacts', Arr::except($requestData, 'terms'));
     }
 
-    public function testFirstNameIsRequired()
+    public function testNameIsRequired()
     {
         $userData = $this->getFakeUserData();
-        unset($userData['first_name']);
+        unset($userData['name']);
 
-        $response = $this->post('/contact-us', $userData);
+        $response = $this->post(route('contact.create'), $userData);
 
-        $response->assertSessionHasErrors('first_name');
-    }
-
-    public function testLastNameIsRequired()
-    {
-        $userData = $this->getFakeUserData();
-        unset($userData['last_name']);
-
-        $response = $this->post('/contact-us', $userData);
-
-        $response->assertSessionHasErrors('last_name');
+        $response->assertSessionHasErrors('name');
     }
 
     public function testEmailIsRequired()
@@ -71,7 +60,7 @@ class ContactTest extends TestCase
         $userData = $this->getFakeUserData();
         unset($userData['email']);
 
-        $response = $this->post('/contact-us', $userData);
+        $response = $this->post(route('contact.create'), $userData);
 
         $response->assertSessionHasErrors('email');
     }
@@ -81,7 +70,7 @@ class ContactTest extends TestCase
         $userData = $this->getFakeUserData();
         unset($userData['message']);
 
-        $response = $this->post('/contact-us', $userData);
+        $response = $this->post(route('contact.create'), $userData);
 
         $response->assertSessionHasErrors('message');
     }
@@ -91,7 +80,7 @@ class ContactTest extends TestCase
         $userData = $this->getFakeUserData();
         unset($userData['terms']);
 
-        $response = $this->post('/contact-us', $userData);
+        $response = $this->post(route('contact.create'), $userData);
 
         $response->assertSessionHasErrors('terms');
     }
