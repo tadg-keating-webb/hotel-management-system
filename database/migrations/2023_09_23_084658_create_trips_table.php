@@ -14,7 +14,7 @@ return new class extends Migration
             $table->text('description');
             $table->longText('long_description');
             $table->float('price')->nullable();
-            $table->boolean('contact_for_price')->default(0);
+            $table->integer('duration')->nullable();
             $table->string('image')->nullable();
             $table->timestamps();
         });

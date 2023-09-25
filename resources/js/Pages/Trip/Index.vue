@@ -24,7 +24,7 @@ defineProps({
                                         </Link>
                                     </div>
                                     <div class="card-body pt-3">
-                                        <a href="javascript:;" class="card-title h5 d-block text-darker">{{ trip.name }}</a>
+                                        <Link :href="route('trip.show', trip)" :class="'card-title h5 d-block text-darker'">{{ trip.name }}</Link>
                                         <p v-html="trip.description" class="card-description mb-4">
                                         </p>
                                     </div>
