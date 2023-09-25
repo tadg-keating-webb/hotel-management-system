@@ -31,7 +31,9 @@ import { Link } from "@inertiajs/vue3";
                             </Link>
                         </li>
                         <li class="nav-item mx-2">
-                            <a href="javascript:void(0);" class="nav-link ps-2 cursor-pointer">Reviews</a>
+                            <Link :href="route('review.index')" :class='"nav-link ps-2 cursor-pointer"'>
+                                Reviews
+                            </Link>
                         </li>
                         <li class="nav-item mx-2">
                             <Link :href="route('contact.create')" :class='"nav-link ps-2 cursor-pointer"'>

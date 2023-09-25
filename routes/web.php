@@ -1,8 +1,9 @@
 <?php
 
 use App\Http\Controllers\ContactController;
-use App\Http\Controllers\TripController;
+use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\TripController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -26,3 +27,5 @@ Route::post('/contact-us', [ContactController::class, 'store'])->name('contact.s
 
 Route::get('/trips', [TripController::class, 'index'])->name('trip.index');
 Route::get('{trip}/trips', [TripController::class, 'show'])->name('trip.show');
+
+Route::get('/reviews', [ReviewController::class, 'index'])->name('review.index');
