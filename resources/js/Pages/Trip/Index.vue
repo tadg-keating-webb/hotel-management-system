@@ -1,16 +1,38 @@
 <script setup>
+import AppLayout from "../../Layouts/AppLayout.vue";
+
 defineProps({
     trips: Object,
 });
 
-import AppLayout from "../../Layouts/AppLayout.vue";
 </script>
 
 <template>
     <AppLayout>
         <section>
             <div class="container py-4">
-
+                <h3 class="text-center">Our Most Popular Trips</h3>
+                <section class="py-6 bg-gray-100">
+                    <div class="container">
+                        <div class="row">
+                            <div v-for="trip in trips" class="col-lg-4 mb-lg-0 mb-4">
+                                <div class="card">
+                                    <div class="p-0 mx-3 mt-3 position-relative z-index-1">
+                                        <a href="javascript:;" class="d-block">
+                                            <img :src="'/storage/' + trip.image" class="img-fluid border-radius-lg">
+                                        </a>
+                                    </div>
+                                    <div class="card-body pt-3">
+                                        <a href="javascript:;" class="card-title h5 d-block text-darker">{{ trip.name }}</a>
+                                        <p class="card-description mb-4">
+                                            {{ trip.description }}
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </div>
         </section>
     </AppLayout>
