@@ -1,9 +1,15 @@
 <script setup>
 import AppLayout from "../../Layouts/AppLayout.vue";
+import {defineComponent} from "vue";
+import PluralizeDay from "../../Components/PluralizeDay.vue";
 
 defineProps({
     trip: Object,
 });
+
+defineComponent({
+    PluralizeDay,
+})
 
 </script>
 
@@ -27,7 +33,7 @@ defineProps({
                             </tr>
                             <tr>
                                 <td><b>Duration: </b></td>
-                                <td>{{ trip.duration }} Day<span v-if='trip.duration > 1'>s</span></td>
+                                <td><PluralizeDay :duration="trip.duration" /></td>
                             </tr>
                             <tr>
                                 <td><b>Price: </b></td>

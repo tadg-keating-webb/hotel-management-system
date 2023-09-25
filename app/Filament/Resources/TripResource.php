@@ -32,6 +32,7 @@ class TripResource extends Resource
                     ->prefix('$')
                     ->helperText('Will display "Contact for price" if left empty'),
                 Forms\Components\TextInput::make('duration')
+                    ->gte(1, true)
                     ->required()
                     ->numeric()
                     ->helperText('Duration in days'),
