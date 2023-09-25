@@ -19,6 +19,4 @@ class Review extends Model
     protected $casts = [
         'created_at' => 'datetime:F j, Y, H:i A',
     ];
-
-    protected $dateFormat = 'F j, Y, H:i';
 }
