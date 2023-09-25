@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\TripController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -22,3 +23,6 @@ Route::get('/', HomeController::class)->name('home');
 
 Route::get('/contact-us', [ContactController::class, 'create'])->name('contact.create');
 Route::post('/contact-us', [ContactController::class, 'store'])->name('contact.store');
+
+Route::get('/trips', [TripController::class, 'index'])->name('trip.index');
+Route::get('{trip}/trips', [TripController::class, 'show'])->name('trip.show');
