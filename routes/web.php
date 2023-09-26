@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\PageController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\TripController;
@@ -22,6 +23,7 @@ Auth::routes();
 
 Route::get('/', HomeController::class)->name('home');
 
+
 Route::get('/contact-us', [ContactController::class, 'create'])->name('contact.create');
 Route::post('/contact-us', [ContactController::class, 'store'])->name('contact.store');
 
@@ -29,3 +31,5 @@ Route::get('/trips', [TripController::class, 'index'])->name('trip.index');
 Route::get('{trip}/trips', [TripController::class, 'show'])->name('trip.show');
 
 Route::get('/reviews', [ReviewController::class, 'index'])->name('review.index');
+
+Route::get('/{page}', PageController::class)->name('page');
