@@ -1,16 +1,11 @@
 <script setup>
 import AppLayout from "../../Layouts/AppLayout.vue";
-import PluralizeDay from "../../Components/PluralizeDay.vue";
 import { Link } from "@inertiajs/vue3";
 import {defineComponent} from "vue";
 
 defineProps({
     trips: Object,
 });
-
-defineComponent({
-    PluralizeDay,
-})
 
 </script>
 
@@ -26,12 +21,12 @@ defineComponent({
                                 <div class="card">
                                     <div class="p-0 mx-3 mt-3 position-relative z-index-1">
                                         <Link :href="route('trip.show', trip)" :class="'d-block'">
-                                            <img :src="'/storage/' + trip.image" class="img-fluid border-radius-lg">
+                                            <img :src="'/storage/' + trip.images[0]" class="img-fluid border-radius-lg">
                                         </Link>
                                     </div>
                                     <div class="card-body pt-3">
                                         <Link :href="route('trip.show', trip)" :class="'card-title h5 d-block text-darker'">
-                                            {{ trip.title }} - <PluralizeDay :duration="trip.duration" />
+                                            {{ trip.title }} - {{ trip.duration }}
                                         </Link>
                                         <p v-html="trip.description" class="card-description mb-4">
                                         </p>

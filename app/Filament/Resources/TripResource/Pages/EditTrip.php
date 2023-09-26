@@ -16,4 +16,13 @@ class EditTrip extends EditRecord
             Actions\DeleteAction::make(),
         ];
     }
+
+    protected function mutateFormDataBeforeFill(array $data): array
+    {
+        preg_match('!\d+!', $data['duration'], $matches);
+
+        $data['duration'] = $matches[0];
+
+        return $data;
+    }
 }

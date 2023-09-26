@@ -15,10 +15,20 @@ class Trip extends Model
         'long_description',
         'price',
         'duration',
-        'image',
+        'images',
     ];
 
     protected $casts = [
-        'image' => 'array',
+        'images' => 'array',
     ];
+
+    public function getDurationAttribute($value): string
+    {
+        return $value .  ' day' . ($value > 1 ? 's' : '');
+    }
+
+    public function getImagesAttribute($value): array
+    {
+        return json_decode($value);
+    }
 }

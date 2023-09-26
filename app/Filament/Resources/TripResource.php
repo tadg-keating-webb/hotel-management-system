@@ -46,8 +46,9 @@ class TripResource extends Resource
                     ->required()
                     ->minHeight(500)
                     ->columnSpanFull(),
-                Forms\Components\FileUpload::make('image')
+                Forms\Components\FileUpload::make('images')
                     ->required()
+                    ->multiple()
                     ->image(),
             ]);
     }
@@ -62,8 +63,11 @@ class TripResource extends Resource
                 Tables\Columns\TextColumn::make('price')
                     ->getStateUsing(function (Trip $trip) {
                         return $trip->price ? '$' . $trip->price : 'Contact For Price';
-                    }),
-                Tables\Columns\ImageColumn::make('image'),
+                    })
+                    ->sortable(),
+                Tables\Columns\ImageColumn::make('images'),
+                Tables\Columns\TextColumn::make('description')
+                    ->toggleable(isToggledHiddenByDefault: true),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()

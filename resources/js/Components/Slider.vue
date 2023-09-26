@@ -11,16 +11,8 @@ export default {
         Navigation,
     },
     props: {
-        title: String, // Define the 'title' prop
-    },
-    data() {
-        return {
-            images: [
-                'https://i.natgeofe.com/k/cc0e882b-fd28-47a1-886e-5ff5560d4c6a/vietnam-market.jpg?w=1084.125&h=609',
-                'https://cdnimgen.vietnamplus.vn/uploaded/wbxx/2022_10_08/cauvang.jpg',
-                'https://izitour.com/media/blog/vietnam-in-november.webp',
-            ],
-        };
+        title: String,
+        images: Array
     },
 }
 </script>
@@ -30,7 +22,7 @@ export default {
         <carousel :items-to-show="1" :wrapAround="true" :autoplay="5000">
             <slide v-for="slide in images" :key="slide">
                 <div class="slide-content">
-                    <img :src="slide" alt="Slider Image" class="slide-image" />
+                    <img :src="'/storage/' + slide" alt="Slider Image" class="slide-image" />
                 </div>
             </slide>
             <template #addons>
