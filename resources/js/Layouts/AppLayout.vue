@@ -57,29 +57,31 @@ import { Link } from "@inertiajs/vue3";
                 <div class="row">
                     <div class="col-lg-4 me-auto mb-lg-0 mb-4 text-lg-start text-center">
                         <h6 class="text-white font-weight-bolder text-uppercase mb-lg-4 mb-3">Hotel Management System</h6>
-                        <ul class="nav flex-row ms-n3 align-items-center mb-4 mt-sm-0">
-                            <li class="nav-item">
-                                <Link :href="route('home')" :class='"nav-link text-white opacity-8"'>
-                                    Home
-                                </Link>
-                            </li>
-                            <li class="nav-item">
-                                <Link :href="route('trip.index')" :class='"nav-link text-white opacity-8"'>
-                                    Trips
-                                </Link>
-                            </li>
+                        <div class="d-flex justify-content-center justify-content-sm-start">
+                            <ul class="nav flex-row ms-n3 align-items-center mb-4 mt-sm-0">
+                                <li class="nav-item">
+                                    <Link :href="route('home')" :class='"nav-link text-white opacity-8"'>
+                                        Home
+                                    </Link>
+                                </li>
+                                <li class="nav-item">
+                                    <Link :href="route('trip.index')" :class='"nav-link text-white opacity-8"'>
+                                        Trips
+                                    </Link>
+                                </li>
 
-                            <li class="nav-item">
-                                <a class="nav-link text-white opacity-8" href="javascript:;">
-                                    Booking
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <Link :href="route('contact.create')" :class='"nav-link text-white opacity-8"'>
-                                    Contact
-                                </Link>
-                            </li>
-                        </ul>
+                                <li class="nav-item">
+                                    <a class="nav-link text-white opacity-8" href="javascript:;">
+                                        Booking
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <Link :href="route('contact.create')" :class='"nav-link text-white opacity-8"'>
+                                        Contact
+                                    </Link>
+                                </li>
+                            </ul>
+                        </div>
                         <p class="text-sm text-white opacity-8 mb-0">
                             Copyright &#174; 2023 Tadg Keating-Webb&#8482;
                         </p>
