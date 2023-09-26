@@ -10,11 +10,15 @@ class Trip extends Model
     use HasFactory;
 
     public $fillable = [
-        'name',
+        'title',
         'description',
         'long_description',
         'price',
         'duration',
         'image',
+    ];
+
+    protected $casts = [
+        'image' => 'array',
     ];
 }

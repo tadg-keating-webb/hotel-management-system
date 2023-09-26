@@ -10,10 +10,10 @@ return new class extends Migration
     {
         Schema::create('trips', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('title');
             $table->text('description');
             $table->longText('long_description');
-            $table->float('price')->nullable();
+            $table->double('price')->nullable();
             $table->integer('duration')->nullable();
             $table->string('image')->nullable();
             $table->timestamps();

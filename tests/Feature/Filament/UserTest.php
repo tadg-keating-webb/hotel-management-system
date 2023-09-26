@@ -114,8 +114,6 @@ class UserTest extends TestCase
                 'name' => 'required',
                 'email' => 'required',
             ]);
-
-// Add more validation tests as needed for email format, password strength, etc.
     }
 
     public function test_can_delete()

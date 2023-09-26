@@ -24,9 +24,9 @@ class TripResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('name')
-                    ->required()
-                    ->maxLength(255),
+                Forms\Components\TextInput::make('title')
+                    ->maxLength(255)
+                    ->required(),
                 Forms\Components\TextInput::make('price')
                     ->numeric()
                     ->prefix('$')
@@ -56,7 +56,7 @@ class TripResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('name')
+                Tables\Columns\TextColumn::make('title')
                     ->searchable()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('price')
@@ -78,6 +78,7 @@ class TripResource extends Resource
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
+                Tables\Actions\DeleteAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([

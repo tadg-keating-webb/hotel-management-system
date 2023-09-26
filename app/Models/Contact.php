@@ -7,11 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Contact extends Model
 {
+    use HasFactory;
+
     public $fillable = [
         'name',
         'email',
         'message',
     ];
-
-    use HasFactory;
 }

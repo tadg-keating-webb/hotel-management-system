@@ -30,7 +30,9 @@ defineComponent({
                                         </Link>
                                     </div>
                                     <div class="card-body pt-3">
-                                        <Link :href="route('trip.show', trip)" :class="'card-title h5 d-block text-darker'">{{ trip.name }} - <PluralizeDay :duration="trip.duration" /></Link>
+                                        <Link :href="route('trip.show', trip)" :class="'card-title h5 d-block text-darker'">
+                                            {{ trip.title }} - <PluralizeDay :duration="trip.duration" />
+                                        </Link>
                                         <p v-html="trip.description" class="card-description mb-4">
                                         </p>
                                     </div>
