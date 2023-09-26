@@ -22,12 +22,17 @@ class UserResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('name')->required(),
-                Forms\Components\TextInput::make('email')->email()->required(),
-                Forms\Components\TextInput::make('password')->password()->required(),
+                Forms\Components\TextInput::make('name')
+                    ->required(),
+                Forms\Components\TextInput::make('email')
+                    ->email()
+                    ->required(),
+                Forms\Components\TextInput::make('password')
+                    ->password()
+                    ->required(),
                 Forms\Components\Select::make('is_admin')
-                    ->options([true => 'Yes', false => 'No']),
-
+                    ->options([true => 'Yes', false => 'No'])
+                    ->required(),
             ]);
     }
 
@@ -35,10 +40,15 @@ class UserResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('id'),
-                Tables\Columns\TextColumn::make('name'),
-                Tables\Columns\TextColumn::make('email'),
-                Tables\Columns\IconColumn::make('is_admin')->boolean(),
+                Tables\Columns\TextColumn::make('id')
+                    ->sortable(),
+                Tables\Columns\TextColumn::make('name')
+                    ->sortable(),
+                Tables\Columns\TextColumn::make('email')
+                    ->sortable(),
+                Tables\Columns\IconColumn::make('is_admin')
+                    ->boolean()
+                    ->sortable(),
             ])
             ->filters([
                 //
