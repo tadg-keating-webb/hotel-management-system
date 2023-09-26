@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Feature;
+namespace Tests\Feature\Filament;
 
 use App\Filament\Resources\ReviewResource;
 use App\Models\Review;
