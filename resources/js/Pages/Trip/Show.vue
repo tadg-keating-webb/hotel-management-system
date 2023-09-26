@@ -1,15 +1,10 @@
 <script setup>
 import AppLayout from "../../Layouts/AppLayout.vue";
-import {defineComponent} from "vue";
-import PluralizeDay from "../../Components/PluralizeDay.vue";
+import Slider from "../../Components/Slider.vue";
 
 defineProps({
     trip: Object,
 });
-
-defineComponent({
-    PluralizeDay,
-})
 
 </script>
 
@@ -17,6 +12,7 @@ defineComponent({
     <AppLayout>
         <section>
             <div class="container py-4">
+                <Slider :title="trip.title + ' - ' + trip.duration"/>
                 <h3 class="text-center">{{ trip.name }}</h3>
                 <div v-html:='trip.long_description'></div>
                 <div class="row">
@@ -33,7 +29,7 @@ defineComponent({
                             </tr>
                             <tr>
                                 <td><b>Duration: </b></td>
-                                <td><PluralizeDay :duration="trip.duration" /></td>
+                                <td>{{ trip.duration }}</td>
                             </tr>
                             <tr>
                                 <td><b>Price: </b></td>
