@@ -43,8 +43,7 @@ class TripTest extends TestCase
     public function test_can_create()
     {
         $trip = Trip::factory()->make()->toArray();
-
-        $trip['image'] = [$trip['image']];
+        $trip['duration'] = 4;
 
         Livewire::test(TripResource\Pages\CreateTrip::class)
             ->fillForm($trip)
@@ -74,14 +73,14 @@ class TripTest extends TestCase
 
     public function test_can_retrieve_data_on_edit_page()
     {
-        $trip = Trip::factory()->create();
+        $trip = Trip::factory()->create(['duration' => 4]);
 
         Livewire::test(TripResource\Pages\EditTrip::class, [
             'record' => $trip->getRouteKey(),
         ])
             ->assertFormSet([
                 'title' => $trip->title,
-                'duration' => $trip->duration,
+                'duration' => 4,
                 'description' => $trip->description,
                 'long_description' => $trip->long_description,
                 'price' => $trip->price,
@@ -94,7 +93,7 @@ class TripTest extends TestCase
 
         $data = Trip::factory()->make()->toArray();
 
-        $data['image'] = [$data['image']];
+        $data['duration'] = 4;
 
         Livewire::test(TripResource\Pages\EditTrip::class, [
             'record' => $trip->getRouteKey(),
@@ -109,7 +108,7 @@ class TripTest extends TestCase
         $this->assertEquals($trip->description, $data['description']);
         $this->assertEquals($trip->long_description, $data['long_description']);
         $this->assertEquals($trip->price, $data['price']);
-        $this->assertEquals($trip->duration, $data['duration']);
+        $this->assertEquals($trip->duration, $data['duration'] . ' days');
     }
 
     public function test_can_validate_input_on_update()

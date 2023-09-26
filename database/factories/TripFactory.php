@@ -23,7 +23,7 @@ class TripFactory extends Factory
             'duration' => rand(1, 5),
             'description' => fake()->paragraph(),
             'long_description' => fake()->randomHtml(3),
-            'image' => fake()->image(),
+            'images' => [fake()->image()],
         ];
     }
 
