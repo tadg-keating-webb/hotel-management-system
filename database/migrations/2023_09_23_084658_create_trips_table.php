@@ -11,6 +11,7 @@ return new class extends Migration
         Schema::create('trips', function (Blueprint $table) {
             $table->id();
             $table->string('title');
+            $table->string('slug');
             $table->text('description');
             $table->longText('long_description');
             $table->double('price')->nullable();

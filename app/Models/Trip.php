@@ -11,6 +11,7 @@ class Trip extends Model
 
     public $fillable = [
         'title',
+        'slug',
         'description',
         'long_description',
         'price',
@@ -21,6 +22,11 @@ class Trip extends Model
     protected $casts = [
         'images' => 'array',
     ];
+
+    public function getRouteKeyName(): string
+    {
+        return 'slug';
+    }
 
     public function getDurationAttribute($value): string
     {

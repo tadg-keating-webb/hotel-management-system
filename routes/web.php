@@ -28,7 +28,7 @@ Route::get('/contact-us', [ContactController::class, 'create'])->name('contact.c
 Route::post('/contact-us', [ContactController::class, 'store'])->name('contact.store');
 
 Route::get('/trips', [TripController::class, 'index'])->name('trip.index');
-Route::get('{trip}/trips', [TripController::class, 'show'])->name('trip.show');
+Route::get('/trips/{trip}', [TripController::class, 'show'])->name('trip.show');
 
 Route::get('/reviews', [ReviewController::class, 'index'])->name('review.index');
 
