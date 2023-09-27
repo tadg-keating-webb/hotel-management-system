@@ -19,6 +19,7 @@ class TripFactory extends Factory
     {
         return [
             'title' => fake()->text(30),
+            'slug' => fake()->slug(),
             'price' => fake()->randomNumber(3),
             'duration' => rand(1, 5),
             'description' => fake()->paragraph(),
