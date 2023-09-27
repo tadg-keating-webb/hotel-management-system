@@ -14,7 +14,7 @@ import { Link } from "@inertiajs/vue3";
         <nav class="navbar navbar-expand-lg bg-transparent py-3 shadow-none ">
             <div class="container">
                 <Link :href="route('home')" :class="'navbar-brand w-8'">
-                    <img src="/images/hotel-logo.png" alt="" height="" width="100">
+                    <img :src="'/images/hotel-logo.png'" alt="" height="" width="100">
                 </Link>
                 <button class="navbar-toggler shadow-none ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon mt-2">
